@@ -1,0 +1,99 @@
+
+.top-panel {
+    background-color: #fff;
+}
+
+.top-panel-button,
+.top-panel-header {
+    background-color: #a3a3a3;
+}
+
+
+/* Hide buttons */
+.top-panel-button {
+    width: 183px;
+}
+.input-search {
+    width: 345px;
+}
+#btnGrout,
+#btnRefine {
+    display: none;
+}
+
+
+.top-panel-label {
+    font-size: larger;
+    margin: 0 6px;
+}
+
+.accordion-body {
+    max-height: unset !important;
+}
+.accordion-filter {
+    display: inline-block;
+    position: relative;
+    height: 23px;
+    font-size: initial;
+    /* font-size: larger; */
+}
+.ui-accordion .ui-accordion-content {
+    padding: 0;
+    border: 0;
+    max-height: 300px;
+}
+.ui-widget.ui-widget-content {
+    border: none;
+}
+.accordion-filter > div {
+    position: absolute;
+    z-index: 1;
+    width: 264px;
+}
+.accordion-menu > h3 {
+    background-color: #fff !important;
+    color: #94989b !important;
+}
+.ui-accordion .ui-accordion-header {
+    margin: 0;
+    border-radius: 0;
+    padding: 8px 5px;
+    outline: none;
+    background-color: #94989b;
+    color: #fff;
+}
+.product-name {
+    cursor: pointer;
+    padding: 8px 18px;
+    border: 1px solid #fff;
+    background-color: #e6e6e8;
+}
+.product-name:hover,
+.product-name:focus {
+    background-color: #cccccc;
+}
+.ui-button.ui-state-active:hover,
+.ui-button:active,
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active {
+    border: 1px solid #c5c5c5;
+    background-color: #94989b;
+    font-weight: 400;
+    color: #fff;
+}
+.filter-accordion .-selected {
+    font-size: small;
+    border: 1px solid #a3a3a3;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+.filter-accordion .-remove {
+    background-color: #a3a3a3;
+    padding: 0px 3px;
+    border-radius: 26px;
+    margin-left: 2px;
+    margin-right: 5px;
+    color: #fff;
+}

@@ -1,0 +1,55 @@
+{
+    "Select Room": "Seleccionar Ambiente",
+    "Livingroom": "Sala",
+    "Kitchen": "Cocina",
+    "Bathroom": "Baño",
+    "Bedroom": "Dormitorio",
+    "Outdoor": "Exterior",
+    "Other": "Otros",
+    "others": "Otros",
+
+    "Product information": "Información de producto",
+    "Save design": "Guardar Diseño",
+    "Save design as image": "Guardar diseño como imagen",
+    "Save with info as PDF": "Guardar con información como PDF",
+    "Save design in account": "Guardar diseño en cuenta",
+    "Close": "Cerrar",
+
+    "Product": "Producto",
+    "Search Product": "Buscar producto",
+    "Laying angle": "Ángulo de colocación",
+    "Sort tiles": "Ordenar piezas",
+    "Refine": "Filtros",
+
+    "Size": "Tamaño",
+    "All": "Todos",
+    "None": "Ninguno",
+    "Invert": "Invertir",
+
+    "Finish": "Terminado",
+    "Matt": "Mate",
+    "matt": "Mate",
+    "Textured": "Texturado",
+    "textured": "Texturado",
+    "Glossy": "Brillante",
+    "glossy": "Brillante",
+    "Semi polished": "Semi-brillante",
+    "semi polished": "Semi-brillante",
+    "Color": "Color",
+    "Price": "Precio",
+    "price": "Precio",
+
+    "Layout": "Disposición",
+    "Free Design": "Diseño Libre",
+    "Rotate By Click": "Rotar con click",
+    "Standard": "Estándar",
+    "Chess": "Ajedrez",
+    "Horizontal Skew": "Trabado Horizontal",
+    "Vertical Skew": "Trabado Vertical",
+
+    "Grout": "Emporado",
+    "Grout Size": "Tamaño de emporado",
+    "Grout Color": "Color de emporado",
+
+    "PRODUCT_URL": "Página del producto"
+}

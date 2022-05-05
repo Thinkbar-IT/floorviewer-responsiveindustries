@@ -1,0 +1,199 @@
+/*!
+ * Client 4 Styles override
+ */
+
+ @font-face {
+    font-family: Gotham;
+    src: url(/css/fonts/Gotham.otf);
+}
+
+body {
+    margin: 0;
+    font-family: Gotham, Century Gothic, Helvetica, sans-serif;
+    font-size: small;
+}
+
+.top-panel {
+    background-color: #ecfefe;
+    top: 0;
+    width: 800px;
+    max-height: calc(100% - 120px);
+    max-width: 100%;
+    min-height: 340px;
+}
+
+.top-panel-header {
+    background-color: unset;
+    color: unset;
+}
+
+.top-panel .-title {
+    text-align: center;
+    margin: 14px;
+}
+.top-panel .-title span {
+    font-weight: bold;
+}
+
+.top-panel .-close {
+    right: 0;
+    top: 0;
+    position: absolute;
+    margin: 7px;
+    border: 2px solid #000;
+    border-radius: 36px;
+    line-height: 17px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.top-panel .nav-tabs {
+    margin-left: 16px;
+    border-bottom: none;
+}
+
+.top-panel .nav-tabs li a {
+    font-size: medium;
+    color: #3e3e3e;
+    margin: 1px;
+    padding: 8px 11px;
+    background: #ddd;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    cursor: pointer;
+}
+.top-panel .nav-tabs li a:hover,
+.top-panel .nav-tabs .-active{
+    background: #fff;
+}
+
+.top-panel-box {
+    margin: 0px 17px;
+    background: #fff;
+    padding: 13px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.tiles-list {
+    margin-bottom: 17px;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+}
+
+.input-search {
+    width: 533px;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-icon-button {
+    border-radius: 0 5px 5px 0;
+}
+
+.top-panel-content-tiles-list-item {
+    width: 160px;
+    float: left;
+    margin: 16px 8px 8px 16px;
+    background-color: #f0f0f0;
+    border: 1px solid #cdcdcd;
+    text-align: center;
+}
+
+.tile-list-thumbnail-image-holder {
+    display: block;
+    width: unset;
+}
+
+.tile-list-text {
+    display: unset;
+}
+
+.tile-list-text p {
+    display: none;
+}
+
+.tile-list-text .-caption {
+    display: unset;
+    border: none;
+    font-weight: normal;
+    font-size: smaller;
+}
+
+#topPanelFilter {
+    padding: 0px;
+}
+
+.filter-block {
+    border: none;
+}
+
+.filter-item-checkbox {
+    width: unset;
+}
+
+.filter-block .-header,
+.filter-block-support-buttons {
+    display: none;
+}
+
+.radio-skew-size {
+    margin-top: 2px;
+    margin-right: 352px;
+    margin-bottom: 10px;
+}
+
+#topPanelShowLayoutTools {
+    float: right;
+    width: 145px;
+    margin: 5px;
+    line-height: 22px;
+    background-color: #f0f0f0;
+    border: 1px solid #cdcdcd;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#topPanelShowLayoutTools :hover {
+    background-color: #ddd;
+}
+
+.product-sub-categories {
+    margin-left: 10px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+}
+
+.product-sub-categories .filter-item-checkbox {
+    background-color: #ddd;
+    padding: 1px 5px;
+    border-radius: 10px;
+    border: 1px solid #cdcdcd;
+}
+
+#productInfoTilesList > .top-panel-label {
+    clear: both;
+    padding-top: 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+#productInfoTilesList > .top-panel-content-tiles-list-item {
+    margin-top: 8px;
+}
+
+#productInfoPanel {
+    padding-bottom: 14px;
+}
+
+#productInfoTilesList {
+    border: 1px solid #ddd;
+}
+
+.logo {
+    z-index: unset;
+    max-width: 14%;
+}
+
+.logo img {
+    max-width: 100%;
+}

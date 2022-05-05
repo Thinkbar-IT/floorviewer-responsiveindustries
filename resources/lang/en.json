@@ -1,0 +1,42 @@
+{
+    "APP_NAME": "Tiles Designer",
+    "APP_COLORIZER_NAME": "Colorizer",
+
+    "CM": "cm",
+    "MM": "mm",
+
+    "PRICE_TEMPLATE": "PRICE: £ {s} m2",
+
+    "PRODUCT_INFORMATION": "Product information",
+    "COLORS_USED": "Color Combination",
+
+    "SHAPE": "Shape",
+
+    "PRODUCT_URL": "Buy Now",
+
+    "PDF_VISUALIZER_FILE": "Visualizer - Product Info",
+    "PDF_COLORIZER_FILE": "Colorizer - Product Info",
+
+    "PDF_SQUARE_TILE_SIZE": "Size: 20 x 20 x 1.5 cm",
+    "PDF_HEXAGON_TILE_SIZE": "Size: 23 x 20 x 1.5 cm",
+    "PDF_SHAPE_SQUARE": "Shape: Square",
+    "PDF_SHAPE_HEXAGON": "Shape: Hexagonal",
+
+    "thickness": "Thickness: {s}mm",
+
+    "Livingroom": "Living Room",
+    "Refine": "Filter",
+    "glossy": "Glossy",
+    "matt": "Matt",
+
+    "Roto Print Set": "Variant Set",
+
+    "FILTER_FOUND_ONE_TILE": "Found 1 tile",
+    "FILTER_FOUND_TILES": "Found {s} tiles",
+    "FILTER_TILES_NOT_FOUND": "Oops.. There is no tile available with us for your requirement",
+
+    "SHARE_EMAIL_SUBJECT": "TileVisualizer room share link",
+    "SHARE_EMAIL_BODY": "Room share link",
+
+    "SHARE_WHATSAPP_MESSAGE": "TileVisualizer room share link"
+}

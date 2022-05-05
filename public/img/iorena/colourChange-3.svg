@@ -1,0 +1,27 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0)">
+        <path d="M50 50L50 0L0 -2.18557e-06L-2.18557e-06 50L50 50Z" fill="#223C61"/>
+        <path d="M40 0L40 50" stroke="white" stroke-miterlimit="10"/>
+        <path d="M30 0L30 50" stroke="white" stroke-miterlimit="10"/>
+        <path d="M20 0L20 50" stroke="white" stroke-miterlimit="10"/>
+        <path d="M9.90997 0L9.90997 50" stroke="white" stroke-miterlimit="10"/>
+        <path d="M-2.67029e-05 33.5L9.90997 33.5" stroke="white" stroke-miterlimit="10"/>
+        <path d="M20.05 33.5L29.95 33.5" stroke="white" stroke-miterlimit="10"/>
+        <path d="M40.09 33.5L50 33.5" stroke="white" stroke-miterlimit="10"/>
+        <path d="M40.09 16.5L50 16.5" stroke="white" stroke-miterlimit="10"/>
+        <path d="M20.05 16.5L29.95 16.5" stroke="white" stroke-miterlimit="10"/>
+        <path d="M-2.67029e-05 16.5L9.90997 16.5" stroke="white" stroke-miterlimit="10"/>
+        <path d="M30.05 24.5L39.95 24.5" stroke="white" stroke-miterlimit="10"/>
+        <path d="M10.14 24.5L20.05 24.5" stroke="white" stroke-miterlimit="10"/>
+        <path d="M10.14 42.33L20.05 42.33" stroke="white" stroke-miterlimit="10"/>
+        <path d="M10.14 6.75L20.05 6.75" stroke="white" stroke-miterlimit="10"/>
+        <path d="M30.05 42.33L39.95 42.33" stroke="white" stroke-miterlimit="10"/>
+        <path d="M30.05 6.75L39.95 6.75" stroke="white" stroke-miterlimit="10"/>
+        <path d="M49 49L0.999998 49L1 0.999998L49 1L49 49ZM50 50L50 0L0 -2.18557e-06L-2.18557e-06 50L50 50Z" fill="white"/>
+    </g>
+    <defs>
+        <clipPath id="clip0">
+            <rect width="50" height="50" fill="white" transform="translate(50) rotate(90)"/>
+        </clipPath>
+    </defs>
+</svg>

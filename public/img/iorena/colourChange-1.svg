@@ -1,0 +1,10 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 0H0V50H50V0Z" fill="#223C61"/>
+<path d="M0 10H50" stroke="white" stroke-miterlimit="10"/>
+<path d="M0 20H50" stroke="white" stroke-miterlimit="10"/>
+<path d="M0 30H50" stroke="white" stroke-miterlimit="10"/>
+<path d="M0 40.09H50" stroke="white" stroke-miterlimit="10"/>
+<path d="M49 1V49H1V1H49ZM50 0H0V50H50V0Z" fill="white"/>
+<path d="M16.5 50V0" stroke="white" stroke-miterlimit="10"/>
+<path d="M33.5 50V0" stroke="white" stroke-miterlimit="10"/>
+</svg>

@@ -1,0 +1,82 @@
+{
+    "Shape": "Shape",
+    "square": "Hình vuông",
+    "Square": "Hình vuông",
+    "Rectangle": "Hình chữ nhật",
+    "rectangle": "Hình chữ nhật",
+    "diamond": "Hình thoi",
+    "Diamond": "Hình thoi",
+    "hexagon": "Hình lục giác",
+    "Hexagon": "Hình lục giác",
+    "Hexagonal": "Hình lục giác",
+
+    "Select Room": "Chọn không gian",
+    "Livingroom": "Phòng khách",
+    "Kitchen": "Phòng bếp",
+    "Bathroom": "Phòng tắm",
+    "Bedroom": "Phòng ngủ",
+    "Outdoor": "Ngoài trời",
+    "Other": "Khác",
+    "others": "Khác",
+
+    "Product information": "Thông tin sản phẩm",
+    "Save design": "Lưu",
+    "Save design as image": "Lưu dưới dạng ảnh",
+    "Save with info as PDF": "Lưu dưới dạng PDF",
+    "Save design in account": "Lưu vào tài khoản",
+    "Close": "Gần",
+
+    "Product": "Sản phẩm",
+    "Search Product": "Tìm kiếm sản phẩm",
+    "Laying angle": "Xoay góc ốp/lát",
+    "Sort tiles": "Sắp xếp",
+    "Refine": "Lọc",
+
+    "Size": "Kích thước",
+    "All": "Chọn hết",
+    "None": "Bỏ chọn",
+    "Invert": "Đảo chọn",
+
+    "Finish": "Bề mặt",
+    "Matt": "Matt",
+    "matt": "Matt",
+    "Textured": "Dị hình",
+    "textured": "Dị hình",
+    "Glossy": "Bóng",
+    "glossy": "Bóng",
+    "Semi polished": "Mài lướt",
+    "semi polished": "Mài lướt",
+    "Color": "Màu",
+    "Price": "Giá bán",
+    "price": "Giá bán",
+
+    "Layout": "Bố cục",
+    "Free Design": "Tùy chỉnh",
+    "Rotate By Click": "Bấm để xoay",
+    "Standard": "Tiêu chuẩn",
+    "Chess": "Bàn cờ",
+    "Horizontal Skew": "So le ngang",
+    "Vertical Skew": "So le dọc",
+
+    "Grout": "Mạch",
+    "Grout Size": "Kích thuớc mạch",
+    "Grout Color": "Màu mạch",
+
+    "PRODUCT_URL": "Product page",
+    "Product page": "Product page",
+
+    "Newest first": "Mới nhất trước",
+    "Oldest first": "Cũ nhất trước",
+    "Room Info": "Thông tin sản phẩm",
+    "Capture": "Lưu",
+
+    "Full Screen": "Toàn màn hình",
+    "Cancel": "Hủy",
+    "My rooms": "phối cảnh của tôi",
+    "Wall": "Tường",
+    "wall": "Tường",
+    "Floor": "Sàn",
+    "floor": "Sàn"
+}
+
+

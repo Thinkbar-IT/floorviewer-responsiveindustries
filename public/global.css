@@ -1,0 +1,71 @@
+
+body {
+    margin: 0;
+    font-family: Century Gothic, Helvetica, sans-serif;
+    font-size: small;
+}
+
+
+
+.form-group.required .control-label:after {
+  content:"*";
+  color:red;
+}
+
+.alert-top-right {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    z-index: 1111;
+    cursor: pointer;
+}
+
+.modal-loading-animation {
+    z-index: 101;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba();
+}
+
+.modal-loading-animation {
+    display: none;
+    z-index: 1099;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.loading-animation {
+    border: 3px solid #3498db;
+    border-radius: 50%;
+    border-top: 3px solid #fff;
+    width: 80px;
+    height: 80px;
+    -webkit-animation: spin 1.2s linear infinite;
+    animation: spin 1.2s linear infinite;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
