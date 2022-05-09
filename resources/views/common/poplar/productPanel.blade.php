@@ -24,7 +24,7 @@
     <div class="top-panel-box top-panel-box-first" style="display: none;">
         <button id="btnProduct" class="top-panel-button">@lang('Product')</button>
         <button id="btnLayout" class="top-panel-button">@lang('Layout')</button>
-        <button id="btnGrout" class="top-panel-button">@lang('Grout')</button>
+        {{-- <button id="btnGrout" class="top-panel-button">@lang('Grout')</button> --}}
     </div>
 
     <div id="topPanelLayout" class="top-panel-option-box top-panel-box-overflow-y" style="display: none;">
@@ -191,9 +191,10 @@
         } else {
             showTools();
         }
+        
     });
-
     var tabs = document.querySelector('#topPanel ul.nav-tabs')
     tabs.addEventListener('click', hideTools);
 })();
+
 </script>

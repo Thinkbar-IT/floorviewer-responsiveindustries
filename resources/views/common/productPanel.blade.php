@@ -6,7 +6,7 @@
     <div class="top-panel-box top-panel-box-first">
         <button id="btnProduct" class="top-panel-button">@lang('Product')</button>
         <button id="btnLayout" class="top-panel-button">@lang('Layout')</button>
-        <button id="btnGrout" class="top-panel-button">@lang('Grout')</button>
+        {{-- <button id="btnGrout" class="top-panel-button">@lang('Grout')</button> --}}
     </div>
 
     <div class="top-panel-box">

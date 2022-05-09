@@ -16,6 +16,20 @@
     }
     </style>
     @endif
+
+    <style>
+        #bottomPanelMenu {
+            top: 50%;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            transform: translateY(-50%);
+        }
+        .bottom-menu-text {
+            transform: rotate(-90deg) translate(45px, 45px)
+        }
+    </style>
 </head>
 <body>
     @include('js_constants.lang')

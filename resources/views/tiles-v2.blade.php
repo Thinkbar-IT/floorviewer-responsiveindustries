@@ -8,11 +8,9 @@
 
 <script type="text/javascript" charset="utf-8" async defer>
 /*jslint browser: true */
-
 var addTilesFormAction = 'upload';
 var formFilters;
 var formTileSizes;
-
 function getCheckedTilesArray() {
     'use strict';
     var ids = [];
@@ -24,7 +22,6 @@ function getCheckedTilesArray() {
     });
     return ids;
 }
-
 function batchProcessFormOnSubmit() {
     'use strict';
     var checkedTiles = getCheckedTilesArray();
@@ -35,14 +32,12 @@ function batchProcessFormOnSubmit() {
         return false;
     }
 }
-
 function enableSelectedTiles() {
     'use strict';
     var checkedTiles = getCheckedTilesArray();
     if (checkedTiles.length > 0) {
         window.$('#tilesForm').attr('action', '/tiles/enable');
         window.$('#tilesFormInput').val(JSON.stringify(checkedTiles));
-
         window.$('#confirmDialogHeader').text('Confirm enabling tiles');
         window.$('#confirmDialogText').text('Please confirm enabling selected ' + checkedTiles.length + ' tiles.');
         window.$('#confirmDialogSubmit').text('Enable Tiles');
@@ -51,14 +46,12 @@ function enableSelectedTiles() {
         window.$('#warningAlertBox').fadeIn();
     }
 }
-
 function disableSelectedTiles() {
     'use strict';
     var checkedTiles = getCheckedTilesArray();
     if (checkedTiles.length > 0) {
         window.$('#tilesForm').attr('action', '/tiles/disable');
         window.$('#tilesFormInput').val(JSON.stringify(checkedTiles));
-
         window.$('#confirmDialogHeader').text('Confirm disabling tiles');
         window.$('#confirmDialogText').text('Please confirm disabling selected ' + checkedTiles.length + ' tiles.');
         window.$('#confirmDialogSubmit').text('Disable Tiles');
@@ -67,14 +60,12 @@ function disableSelectedTiles() {
         window.$('#warningAlertBox').fadeIn();
     }
 }
-
 function deleteSelectedTiles() {
     'use strict';
     var checkedTiles = getCheckedTilesArray();
     if (checkedTiles.length > 0) {
         window.$('#tilesForm').attr('action', '/tiles/delete');
         window.$('#tilesFormInput').val(JSON.stringify(checkedTiles));
-
         window.$('#confirmDialogHeader').text('Confirm removing tiles');
         window.$('#confirmDialogText').text('Please confirm removing selected ' + checkedTiles.length + ' tiles.');
         window.$('#confirmDialogSubmit').text('Remove Tiles');
@@ -83,14 +74,12 @@ function deleteSelectedTiles() {
         window.$('#warningAlertBox').fadeIn();
     }
 }
-
 function copySelectedTiles() {
     'use strict';
     var checkedTiles = getCheckedTilesArray();
     if (checkedTiles.length > 0) {
         window.$('#tilesForm').attr('action', '/tiles/copy');
         window.$('#tilesFormInput').val(JSON.stringify(checkedTiles));
-
         window.$('#confirmDialogHeader').text('Confirm copying tiles');
         window.$('#confirmDialogText').text('Please confirm creating copies of selected ' + checkedTiles.length + ' tiles.');
         window.$('#confirmDialogSubmit').text('Create Tiles Copies');
@@ -99,23 +88,18 @@ function copySelectedTiles() {
         window.$('#warningAlertBox').fadeIn();
     }
 }
-
 function deleteTile(id) {
     'use strict';
     if (id !== undefined && id !== '') {
         window.$('#tilesForm').attr('action', '/tiles/delete');
         window.$('#tilesFormInput').val('[' + id + ']');
-
         window.$('#confirmDialogHeader').text('Confirm removing tile');
         window.$('#confirmDialogText').text('Please confirm removing tile.');
         window.$('#confirmDialogSubmit').text('Remove Tile');
         window.$('#confirmDialog').modal('show');
     }
 }
-
-
 var formTileOptionIndex = 0;
-
 function prepareExpPropsJsonString() {
     'use strict';
     var i,
@@ -129,7 +113,6 @@ function prepareExpPropsJsonString() {
             expProps[option.toLowerCase()] = value;
         }
     }
-
     var offsetWidth = Number(window.$('#form-tile-offset-width').val()) || 0;
     var offsetHeight = Number(window.$('#form-tile-offset-height').val()) || 0;
     if (offsetWidth || offsetHeight) {
@@ -138,22 +121,17 @@ function prepareExpPropsJsonString() {
             y: offsetHeight,
         };
     }
-
     var category = Number(window.$('#form-tile-category').val()) || 0;
     if (category > 0) {
         expProps.categories = [category];
     }
-
     var buildersRange = window.$('#form-tile-buildersRange').prop('checked');
     if (buildersRange) expProps.buildersRange = buildersRange;
-
     window.$('#form-tile-expProps').val(JSON.stringify(expProps));
 }
-
 function formTileAddOption(options) {
     'use strict';
     if (typeof options !== 'object') options = {};
-
     formTileOptionIndex += 1;
     var innerHtml,
         option = '',
@@ -164,26 +142,21 @@ function formTileAddOption(options) {
         prepend = false,
         removable = typeof options.removable === 'boolean' ? options.removable : true,
         inputType = 'text';
-
     if (options && options.filter) {
         prepend = true;
         removable = false;
         option = options.filter.field;
         readonly = 'readonly';
-
         switch (options.filter.type) {
           case 'slider':
             inputType = 'number';
             break;
-
           default: // 'checkbox', 'tab'
             values = options.filter.values;
         }
     }
-
     if (options && options.name) { option = options.name; }
     if (options && options.value) { value = options.value; }
-
     innerHtml = '<div id="form-tile-option-' + optionIndex + '" class="form-group">' +
         '<div class="col-sm-4">' +
         '<input type="text" name="" id="form-tile-expPropsOption' + optionIndex + '" class="form-control input-sm" value="' + option + '" placeholder="Option name" ' + readonly + '>' +
@@ -194,29 +167,21 @@ function formTileAddOption(options) {
     if (removable) {
         innerHtml += '<div class="col-sm-1"><button type="button" class="close" title="Remove option" onclick="window.$(\'#form-tile-option-' + optionIndex + '\').remove();">&times;</button></div>';
     }
-
-    const cats = <?= json_encode($product_categories_tree) ?>
-
     if (values) {
         values = values.split(',');
-        console.log({ values })
-        innerHtml += '<div class="clearfix">';
+        innerHtml += '<div>';
         values.forEach(function (value, index) {
             value = value.trim();
-            let subCatsHtml = `
-            `;
-            innerHtml += '<div class="col-sm-4 form-check"><label class="form-check-label"><input type="checkbox" id="form-tile-sub-control-check-' + option + index + '" name="form-tile-sub-control-check-' + option + '" value="' + value + '" class="form-tile-sub-control-check-' + option + ' form-check-input"> ' + value + '</label>'+subCatsHtml+'</div>';
+            innerHtml += '<span class="col-sm-4 form-check"><label class="form-check-label"><input type="checkbox" id="form-tile-sub-control-check-' + option + index + '" name="form-tile-sub-control-check-' + option + '" value="' + value + '" class="form-tile-sub-control-check-' + option + ' form-check-input"> ' + value + '</label></span>';
         });
         innerHtml += '</div>';
     }
     innerHtml += '</div>';
-
     if (prepend) {
         window.$('#form-tile-options').prepend(innerHtml);
     } else {
         window.$('#form-tile-options').append(innerHtml);
     }
-
     if (values) {
         window.$('.form-tile-sub-control-check-' + option).change(function () {
             var checkedString = '',
@@ -234,12 +199,10 @@ function formTileAddOption(options) {
         });
     }
 }
-
 var tileExtraOptionsString = '{!! config('app.tiles_extra_options') !!}';
 var tileExtraOptions = tileExtraOptionsString.split(',');
 function addTileExtraOptions() {
     'use strict';
-
     if (tileExtraOptions.length > 0) {
         tileExtraOptions.forEach(function (option) {
             formTileAddOption({
@@ -251,15 +214,11 @@ function addTileExtraOptions() {
         });
     }
 }
-
 function hideCategoryOptions() {
   var categorySelect = document.getElementById('form-tile-category');
   if (!categorySelect) return;
-
   var surfaceSelect = document.getElementById('form-tile-surface');
-
   categorySelect.value = '';
-
   for (var i = 0; i < categorySelect.options.length; i += 1) {
     if (!categorySelect.options[i].dataset.surface || categorySelect.options[i].dataset.surface === surfaceSelect.value) {
       categorySelect.options[i].style.display = '';
@@ -268,20 +227,13 @@ function hideCategoryOptions() {
     }
   }
 }
-
 function showFilters() {
     'use strict';
-
     hideCategoryOptions();
-
     window.$('#form-tile-options').empty();
-
     addTileExtraOptions();
-
     window.$('#form-tile-expProps').val('');
-
     if (!Array.isArray(formFilters)) return;
-
     formFilters.forEach(function (filter) {
         if (filter.surface === window.$('#form-tile-surface').val()) {
             if (filter.field !== 'size' && filter.field !== 'finish' && filter.field !== 'price') {
@@ -290,7 +242,6 @@ function showFilters() {
         }
     });
 }
-
 function loadFilters() {
     'use strict';
     window.$.ajax({
@@ -301,7 +252,6 @@ function loadFilters() {
         }
     });
 }
-
 function fillExpProps(expProps) {
     'use strict';
     try {
@@ -317,17 +267,14 @@ function fillExpProps(expProps) {
                     window.$('#form-tile-offset-width').val(expProps.preparedSetOffset.x || 0);
                     window.$('#form-tile-offset-height').val(expProps.preparedSetOffset.y || 0);
                     break;
-
                 case 'buildersRange':
                     window.$('#form-tile-buildersRange').attr('checked', expProps.buildersRange);
                     break;
-
                 case 'categories':
                     if (Array.isArray(expProps.categories)) {
                         window.$('#form-tile-category').val(expProps.categories[0] || '');
                     }
                     break;
-
                 default:
                     matchFound = false;
                     for (i = 0; i <= formTileOptionIndex; i += 1) {
@@ -349,7 +296,6 @@ function fillExpProps(expProps) {
                             break;
                         }
                     }
-
                     if (!matchFound) {
                         formTileAddOption({ name: option, value: expProps[option] });
                     }
@@ -361,7 +307,6 @@ function fillExpProps(expProps) {
         console.warn(error);
     }
 }
-
 function setValueTileOffsetInputs(shape) {
     var tilesOffset = {
         // preparedSet: {
@@ -395,18 +340,14 @@ function setValueTileOffsetInputs(shape) {
             offsetY: 0,
         },
     };
-
     var offsets = tilesOffset[shape];
-
     window.$('#form-tile-width').val(offsets.width || '');
     window.$('#form-tile-height').val(offsets.height || '');
     window.$('#form-tile-offset-width').val(offsets.offsetX || '');
     window.$('#form-tile-offset-height').val(offsets.offsetY || '');
     window.$('#form-tile-grout').attr('checked', false);
-
     window.$('#form-tile-offset').show();
 }
-
 function showTileOffsetInput(shape) {
     switch (shape) {
         // case 'preparedSet':
@@ -424,7 +365,6 @@ function showTileOffsetInput(shape) {
         case 'stoneSystemCombo':
             setValueTileOffsetInputs(shape);
             break;
-
         default:
             window.$('#form-tile-width').val('');
             window.$('#form-tile-height').val('');
@@ -433,27 +373,21 @@ function showTileOffsetInput(shape) {
             window.$('#form-tile-offset').hide();
     }
 }
-
 function tileFormReset() {
     'use strict';
     window.$('#addTilesFormBlock').hide();
     document.forms.addTilesForm.reset();
-
     window.$('#form-tile-enabled').attr('checked', false);
     window.$('#form-tile-file-img').attr('src', '');
     window.$('#form-tile-icon-img').attr('src', '');
     window.$('#form-tile-grout').attr('checked', true);
     window.$('#form-tile-buildersRange').attr('checked', false);
-
     showTileOffsetInput();
 }
-
 function addTiles() {
     'use strict';
-
     if (addTilesFormAction !== 'upload') {
         tileFormReset();
-
         window.$('#form-tile-id-box').hide();
         window.$('#form-tile-name-box').hide();
         window.$('#form-tile-file-img-box').hide();
@@ -461,7 +395,6 @@ function addTiles() {
         window.$('#form-tile-grout-box').hide();
         window.$('#form-tile-url-box').hide();
         window.$('#form-tile-price-box').hide();
-
         window.$('#form-tile-id').attr('required', false);
         window.$('#form-tile-name').attr('required', false);
         window.$('#form-tile-files').attr('required', true);
@@ -471,28 +404,21 @@ function addTiles() {
         window.$('#form-tile-submit').text('Add tile');
         window.$('#form-tile-file-img').attr('src', '');
         window.$('#form-tile-icon-img').attr('src', '');
-
         addTilesFormAction = 'upload';
         document.forms.addTilesForm.action = '/tiles/upload';
     }
-
     showFilters();
     window.$('#addTilesFormBlock').slideDown();
 }
-
 function editTile(id) {
     'use strict';
-
     addTilesFormAction = 'update';
     document.forms.addTilesForm.action = '/tile/update';
-
     tileFormReset();
-
     window.$.ajax({
         url: '/get/tile/' + id,
         success: function (tile) {
             showTileOffsetInput(tile.shape);
-
             window.$('#form-tile-id-box').show();
             window.$('#form-tile-name-box').show();
             window.$('#form-tile-file-img-box').show();
@@ -500,7 +426,6 @@ function editTile(id) {
             window.$('#form-tile-grout-box').show();
             window.$('#form-tile-url-box').show();
             window.$('#form-tile-price-box').show();
-
             window.$('#form-tile-id').attr('required', true);
             window.$('#form-tile-name').attr('required', true);
             window.$('#form-tile-files').attr('required', false);
@@ -508,16 +433,13 @@ function editTile(id) {
             window.$('#form-tile-removeTile').show();
             window.$('#form-tile-saveAsCopy').show();
             window.$('#form-tile-submit').text('Update tile');
-
             window.$('#form-tile-id').val(tile.id);
             window.$('#form-tile-name').val(tile.name);
             if (Number(tile.enabled)) { window.$('#form-tile-enabled').attr('checked', true); }
             window.$('#form-tile-file-img').attr('src', tile.file);
             window.$('#form-tile-icon-img').attr('src', tile.icon);
-
             window.$('#form-tile-surface').val(tile.surface);
             showFilters();
-
             window.$('#form-tile-shape').val(tile.shape);
             window.$('#form-tile-width').val(tile.width);
             window.$('#form-tile-height').val(tile.height);
@@ -527,14 +449,11 @@ function editTile(id) {
             window.$('#form-tile-price').val(tile.price);
             window.$('#form-tile-rotoPrintSetName').val(tile.rotoPrintSetName);
             window.$('#form-tile-accessLevel').val(tile.access_level || 0);
-
             if (tile.expProps) { fillExpProps(tile.expProps); }
-
             window.$('#addTilesFormBlock').slideDown();
         }
     });
 }
-
 function clearTilesFilterForm() {
     'use strict';
     window.$('#filterTileName').val('');
@@ -549,14 +468,12 @@ function clearTilesFilterForm() {
     window.$('#filterTileExpProps').val('');
     window.$('#filterTileEnabled').val('');
 }
-
 function fillTilesFilterForm() {
     'use strict';
     window.$('#filterTileShape').val(window.$('#filterTileShape').attr('value'));
     window.$('#filterTileSurface').val(window.$('#filterTileSurface').attr('value'));
     window.$('#filterTileFinish').val(window.$('#filterTileFinish').attr('value'));
     window.$('#filterTileEnabled').val(window.$('#filterTileEnabled').attr('value'));
-
     if (window.$('#filterTileName').val() !== '') { window.$('#filterTileName').css('background-color', '#aaffaa'); }
     if (window.$('#filterTileShape').val() !== '') { window.$('#filterTileShape').css('background-color', '#aaffaa'); }
     if (window.$('#filterTileWidth').val() !== '') { window.$('#filterTileWidth').css('background-color', '#aaffaa'); }
@@ -569,7 +486,6 @@ function fillTilesFilterForm() {
     if (window.$('#filterTileExpProps').val() !== '') { window.$('#filterTileExpProps').css('background-color', '#aaffaa'); }
     if (window.$('#filterTileEnabled').val() !== '') { window.$('#filterTileEnabled').css('background-color', '#aaffaa'); }
 }
-
 function changeFilterInputColor() {
     'use strict';
     var filterInput = window.$(this);
@@ -579,7 +495,6 @@ function changeFilterInputColor() {
         filterInput.css('background-color', '#aaffaa');
     }
 }
-
 function showBigTileImageModal(name, image) {
     'use strict';
     if (name && image) {
@@ -588,7 +503,6 @@ function showBigTileImageModal(name, image) {
         window.$('#bigTileImageModal').modal('show');
     }
 }
-
 function selectItem(checked) {
     'use strict';
     window.$('#warningAlertBox').slideUp();
@@ -596,7 +510,6 @@ function selectItem(checked) {
     window.$('#selectAllItemsOnAllPages').prop('checked', false);
     window.$('#selectAllFiltered').val(false);
 }
-
 function selectAllItemsOnCurrentPages(checked) {
     'use strict';
     window.$('.tiles-list-checkbox').prop('checked', checked);
@@ -604,7 +517,6 @@ function selectAllItemsOnCurrentPages(checked) {
     window.$('#selectAllFiltered').val(false);
     window.$('#warningAlertBox').slideUp();
 }
-
 function selectAllItemsOnAllPages(checked) {
     'use strict';
     window.$('.tiles-list-checkbox').prop('checked', checked);
@@ -612,18 +524,14 @@ function selectAllItemsOnAllPages(checked) {
     window.$('#selectAllFiltered').val(checked);
     window.$('#warningAlertBox').slideUp();
 }
-
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
     loadFilters();
     fillTilesFilterForm();
-
     window.$('.tiles-filter-input').on('change', changeFilterInputColor);
-
     window.$('#form-tile-shape').change(function () {
         showTileOffsetInput(this.value);
     });
-
     document.forms.addTilesForm.onsubmit = function () {
         prepareExpPropsJsonString();
     }
@@ -1151,122 +1059,4 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </div>
 
-@endsection
-
-@section('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xhook/1.4.9/xhook.min.js" integrity="sha512-0o1RIUfURa5IHcPtNt8ixdfy6EP5WOoVhiD2ilvjRMyfcxN3JeQEVjfbuwBMhaYREuaHujx/aFlwkPuOuP+3AA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script type="text/javascript">
-
-const subCatOptions = {
-  spcFlooring: [
-    { label: 'Resonate', value: 'Resonate' },
-    { label: 'Inspire', value: 'Inspire' },
-    { label: 'Bellisimo', value: 'Bellisimo' },
-    { label: 'Tranquill', value: 'Tranquill' },
-  ],
-  lvtFlooring: [
-    { label: 'Opulence', value: 'Opulence' },
-    { label: 'Carpet Touch', value: 'Carpet Touch' },
-    { label: 'Natural Wood', value: 'Natural Wood' },
-  ],
-}
-function getSubCatOptions(value) {
-  let fields = null
-
-  $('[value="subcat_01"]').closest('.form-group').hide()
-  $('[value="subcat_02"]').closest('.form-group').hide()
-
-  if (value == 'SPC') {
-    fields = subCatOptions.spcFlooring
-    $('[value="subcat_01"]').closest('.form-group').show()
-  } else if (value == 'LVT') {
-    $('[value="subcat_02"]').closest('.form-group').show()
-    fields = subCatOptions.lvtFlooring
-  }
-
-  return 
-
-  let fieldsHtml = ``
-  if (!fields) {
-    return
-  }
-  fields.map(op => {
-    fieldsHtml += `
-      <li>
-        <label>
-          <input type="checkbox" name="form-tile-sub-control-check-cat" value="${op.value}" class="form-tile-sub-control-check-cat form-check-input">
-          <span>${op.label}</span>
-        </label>
-      </li>
-    `
-  })
-  
-  return `
-    <ol class="list-unstyled list-checks">
-      ${fieldsHtml}
-    </ol>
-  `
-}
-
-function toggleSubFields() {
-  $('[value="subcat_01"]').closest('.form-group').hide()
-  $('[value="subcat_02"]').closest('.form-group').hide()
-
-  $('[value="SPC"]').change(({ target }) => {
-    console.log({ target })
-    if (target.checked) {
-      $('[value="subcat_01"]').closest('.form-group').show()
-    } else {
-      $('[value="subcat_01"]').closest('.form-group').hide()
-    }
-  })
-  $('[value="LVT"]').change(({ target }) => {
-    console.log({ target })
-    if (target.checked) {
-      $('[value="subcat_02"]').closest('.form-group').show()
-    } else {
-      $('[value="subcat_02"]').closest('.form-group').hide()
-    }
-  })
-  return
-
-  Array.from($('input[type="checkbox"]')).map(fl => {
-    $(fl).change(({ target }) => {
-      $(target).closest('.col-sm-4').find('.list-checks').remove()
-      if (target.className.includes('subcat')) {
-        return false;
-      }
-      if (target.checked) {
-        // show
-        $(target).closest('.col-sm-4').append(getSubCatOptions(target.value))
-
-        {{-- $('.list-checks').show() --}}
-
-      } else {
-        // hide
-        {{-- $('[value="subcat_01"]').closest('.form-group').hide()
-        $('[value="subcat_02"]').closest('.form-group').hide() --}}
-      }
-      console.log(target.value)
-    })
-  })
-}
-
-
-$(document).ready(() => {
-
-    xhook.after(function(request, response) {
-    if(request.url.match(/get\/filters$/))
-      console.log('filter')
-        setTimeout(() => {
-            toggleSubFields()
-
-
-        }, 1000)
-        
-    });
-})
-
-</script>
 @endsection

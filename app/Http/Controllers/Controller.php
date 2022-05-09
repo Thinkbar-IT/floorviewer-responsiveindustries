@@ -82,7 +82,7 @@ class Controller extends BaseController
     ///////////////////////////////////////////////////////////
 
 
-    public function tiles($request = null) {
+    public function tiles(Request $request) {
         $filterRequest = $this->parseFilter($request);
         $filterQuery = $this->getFilterQuery($filterRequest);
 
@@ -90,8 +90,14 @@ class Controller extends BaseController
         $surfaceTypes = SurfaceType::optionsAsArray();
 
         $tileIds = Tile::getIds($filterQuery);
-
-        return view('tiles', [
+        $categories = Category::getTreeByType(1);
+        // dd($categories);
+        // return $categories;
+        $viewName = 'tiles';
+        if ($request->old) {
+            $viewName = 'tiles-v2';
+        }
+        return view($viewName, [
             'tiles' => $tiles,
             'filter' => $filterRequest,
             'surfaceTypes' => $surfaceTypes,

@@ -18,6 +18,9 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+    <script src="/js/app.js"></script>
+    <script src="/vendor/jquery.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -140,10 +143,10 @@
         </nav>
 
         @yield('content')
+        @yield('scripts')
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
-    <script src="/js/jquery-ui.min.js"></script>
+    
 </body>
 </html>

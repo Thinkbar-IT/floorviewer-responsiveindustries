@@ -123,6 +123,7 @@ function showBigIconImageModal(name, image) {
         window.$('#bigIconImageModal').modal('show');
     }
 }
+
 </script>
 
 @include('common.alerts')
